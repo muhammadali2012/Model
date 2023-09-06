@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CodAbleInetilizer: Codable {
+public protocol CodAbleInetilizer: Codable {
     associatedtype wrapValueAssociatedType: Codable
     var wrappedValue: wrapValueAssociatedType { get set }
     init(wrappedValue: wrapValueAssociatedType)
@@ -16,13 +16,13 @@ protocol CodAbleInetilizer: Codable {
 }
 
 extension CodAbleInetilizer {
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         let wrappedValueToSave = try container.decode(wrapValueAssociatedType.self)
         self.init(wrappedValue: wrappedValueToSave)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(self.wrappedValue)
     }

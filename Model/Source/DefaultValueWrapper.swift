@@ -11,15 +11,18 @@ import Foundation
 // use this propoerty wrappers on left of a property wrapper which value can be missing or null in json
 // used in KeyedDecodingContainer+Decode
 
-@propertyWrapper struct DefaultValueWrapper<T: CodAbleInetilizer> {
-    var wrappedValue: T
-    var projectedValue: T {
+@propertyWrapper public struct DefaultValueWrapper<T: CodAbleInetilizer> {
+    public var wrappedValue: T
+    public init(wrappedValue: T) {
+        self.wrappedValue = wrappedValue
+    }
+    public var projectedValue: T {
         return wrappedValue
     }
 }
 
 extension DefaultValueWrapper: CodAbleInetilizer {
-    static var defaultValue: T {
+    static public var defaultValue: T {
         get { return FullStringToUrl(wrappedValue: "") as! T }
         set {}
     }

@@ -7,10 +7,10 @@
 //
 
 import Foundation
-@propertyWrapper struct FullStringToUrl: CodAbleInetilizer {
-    static var defaultValue: String? = ""
-    var wrappedValue: String?
-    var projectedValue: URL? {
+@propertyWrapper public struct FullStringToUrl: CodAbleInetilizer {
+    static public var defaultValue: String? = ""
+    public var wrappedValue: String?
+    public var projectedValue: URL? {
         if let nonOptionalWrappeddValue = wrappedValue, nonOptionalWrappeddValue != FullStringToUrl.defaultValue {
             return URL(string: nonOptionalWrappeddValue)
         } else {
@@ -18,7 +18,7 @@ import Foundation
         }
     }
 
-    init(wrappedValue: String?) {
+    public init(wrappedValue: String?) {
         self.wrappedValue = wrappedValue
     }
 }

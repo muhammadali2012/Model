@@ -8,10 +8,10 @@
 
 import Foundation
 
-@propertyWrapper struct DateFormater: CodAbleInetilizer {
-    static var defaultValue: String?
-    var wrappedValue: String?
-    var projectedValue: Date {
+@propertyWrapper public struct DateFormater: CodAbleInetilizer {
+    static public var defaultValue: String?
+    public var wrappedValue: String?
+    public var projectedValue: Date {
         if let nonOptionalWrappedValue = wrappedValue {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM dd, yyyy"
@@ -24,5 +24,8 @@ import Foundation
         } else {
             return Date()
         }
+    }
+    public init(wrappedValue: String? = nil) {
+        self.wrappedValue = wrappedValue
     }
 }
