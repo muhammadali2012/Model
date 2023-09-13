@@ -23,7 +23,9 @@ import Foundation
 
 extension DefaultValueWrapper: CodAbleInetilizer {
     static public var defaultValue: T {
-        get { return FullStringToUrl(wrappedValue: "") as! T }
+        get { return T(wrappedValue: T.defaultValue)}
         set {}
     }
 }
+
+
