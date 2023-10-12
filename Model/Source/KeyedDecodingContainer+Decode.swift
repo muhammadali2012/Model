@@ -9,6 +9,7 @@
 import Foundation
 // theese functions are called on property wrappers from left to right , left wrapper will be the first.
 extension KeyedDecodingContainer {
+    
     public func decode<P>(_: DefaultValueWrapper<P>.Type, forKey key: Key) throws -> DefaultValueWrapper<P> where P: CodAbleInetilizer {
         if let value = try decodeIfPresent(DefaultValueWrapper<P>.self, forKey: key) {
             return value
@@ -17,11 +18,8 @@ extension KeyedDecodingContainer {
         }
     }
     
-    
-    
-    
     public func decode<P>(_: AnyValueWrapper<P>.Type, forKey key: Key) throws -> AnyValueWrapper<P> where P: CodAbleInetilizer {
-    
+        
         if let value = try? decodeIfPresent(AnyValueWrapper<P>.self, forKey: key) {
             return value
         }
