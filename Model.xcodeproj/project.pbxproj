@@ -16,6 +16,9 @@
 		13443C7B2AA883E80019951D /* DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13443C7A2AA883E70019951D /* DateFormater.swift */; };
 		13443C7C2AA883E80019951D /* StringHexToColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13443C792AA883E70019951D /* StringHexToColor.swift */; };
 		13696C002AA8950C00E19624 /* DefaultBoolFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13696BFF2AA8950C00E19624 /* DefaultBoolFalse.swift */; };
+		13728C1B2ACEE54C004774C2 /* String+DataTypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13728C1A2ACEE54C004774C2 /* String+DataTypeConversion.swift */; };
+		13C624202AD7C5FE00EB1F8C /* Double+Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6241F2AD7C5FE00EB1F8C /* Double+Int.swift */; };
+		13C624222AD802D900EB1F8C /* DefaultStringEmptyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C624212AD802D900EB1F8C /* DefaultStringEmptyArray.swift */; };
 		13CE85062AAB3E040003DAC6 /* AnyValueWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CE85052AAB3E040003DAC6 /* AnyValueWrapper.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		13443C792AA883E70019951D /* StringHexToColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHexToColor.swift; sourceTree = "<group>"; };
 		13443C7A2AA883E70019951D /* DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormater.swift; sourceTree = "<group>"; };
 		13696BFF2AA8950C00E19624 /* DefaultBoolFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultBoolFalse.swift; sourceTree = "<group>"; };
+		13728C1A2ACEE54C004774C2 /* String+DataTypeConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DataTypeConversion.swift"; sourceTree = "<group>"; };
+		13C6241F2AD7C5FE00EB1F8C /* Double+Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Int.swift"; sourceTree = "<group>"; };
+		13C624212AD802D900EB1F8C /* DefaultStringEmptyArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultStringEmptyArray.swift; sourceTree = "<group>"; };
 		13CE85052AAB3E040003DAC6 /* AnyValueWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyValueWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,9 +84,12 @@
 				13CE85052AAB3E040003DAC6 /* AnyValueWrapper.swift */,
 				13443C5F2AA854EB0019951D /* FullStringToUrl.swift */,
 				13443C772AA883E10019951D /* DefaultStringEmpty.swift */,
+				13C624212AD802D900EB1F8C /* DefaultStringEmptyArray.swift */,
 				13443C7A2AA883E70019951D /* DateFormater.swift */,
 				13443C792AA883E70019951D /* StringHexToColor.swift */,
 				13696BFF2AA8950C00E19624 /* DefaultBoolFalse.swift */,
+				13728C1A2ACEE54C004774C2 /* String+DataTypeConversion.swift */,
+				13C6241F2AD7C5FE00EB1F8C /* Double+Int.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -167,10 +176,13 @@
 			files = (
 				13443C782AA883E20019951D /* DefaultStringEmpty.swift in Sources */,
 				13CE85062AAB3E040003DAC6 /* AnyValueWrapper.swift in Sources */,
+				13728C1B2ACEE54C004774C2 /* String+DataTypeConversion.swift in Sources */,
 				13443C602AA854EB0019951D /* FullStringToUrl.swift in Sources */,
 				13443C5B2AA853840019951D /* CodAbleInetilizer.swift in Sources */,
 				13443C5E2AA854E70019951D /* DefaultValueWrapper.swift in Sources */,
+				13C624222AD802D900EB1F8C /* DefaultStringEmptyArray.swift in Sources */,
 				13443C7C2AA883E80019951D /* StringHexToColor.swift in Sources */,
+				13C624202AD7C5FE00EB1F8C /* Double+Int.swift in Sources */,
 				13696C002AA8950C00E19624 /* DefaultBoolFalse.swift in Sources */,
 				13443C5C2AA853840019951D /* KeyedDecodingContainer+Decode.swift in Sources */,
 				13443C7B2AA883E80019951D /* DateFormater.swift in Sources */,
