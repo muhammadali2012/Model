@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Muhammad Ali' => 'aliarham2012@gmail.com' }
   s.source       = { :git => 'https://github.com/muhammadali2012/Model.git', :tag => s.version.to_s }
   s.swift_version = '5.0' 
-
+  s.platform     = :ios, "9.0"
   s.source_files = 'Model/*' # Include your source files
 end
 
