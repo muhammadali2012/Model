@@ -1,59 +1,79 @@
-# Model
-Make your type Codable with confidence. 
+## Introduction
 
-Don't know the type of a key's value in JSON response no problem. 
-Simple mark it with @AnyValueWrapper and @DefaultStringEmpty in case you always want a String ie 
-{
-    price: "45000"
-}
+This Swift Pod provides a set of powerful property wrappers and utilities to simplify working with Codable types and JSON responses. With these property wrappers, you can easily handle scenarios where JSON key types are uncertain, null, or non-existent, and you can also customize your own property wrappers. This README will guide you through the features and usage of this Pod.
 
-or 
+## Features
 
-{
-    price: 45000
-}
+### 1. Handling Uncertain JSON Types
 
-struct item {
-    @AnyValueWrapper @DefaultStringEmpty var price: String
-}
+You can make your Codable types more flexible when dealing with uncertain JSON data types. This is especially helpful when the JSON response may contain a key with a different data type or no value at all. Here's how to use it:
 
-Key might be null or not exist at all some responses no problem.
-struct item {
-    @DefaultValueWrapper @DefaultStringEmpty var price: String
-}
+- Use `@AnyValueWrapper` and `@DefaultStringEmpty` to handle any JSON value, ensuring you get a String result.
+  
+  Example:
+  ```swift
+  struct Item {
+      @AnyValueWrapper @DefaultStringEmpty var price: String
+  }
+  ```
+  
 
-if no value is received in either @DefaultValueWrapper or @AnyValueWrapper
-default value of the nested property wrapper will be used ie in our case @DefaultStringEmpty will give "" 
 
-No need to write long custom init for your codable types.
+### 2. Default Values
+- For cases where the key might be null or not exist at all, you can use `@DefaultValueWrapper` in a similar way.
 
-No need to do long optional chanings in code due to default values. 
+If no value is received for a key using `@DefaultValueWrapper` or `@AnyValueWrapper`, the default value of the nested property wrapper will be used. In the case of `@DefaultStringEmpty`, it will default to an empty string.
 
-No need to convert JSON response type into native type every time before use ie String to url just use the wrapper 
+### 3. Eliminate Custom Initializers
 
-{
-    pictureUrl : "https://static1.pakgari.com/ad_pictures/1859/Slide_zymol-cleaner-wax-18596687.jpg"
-}
-struct item {
+You won't need to write lengthy custom initializers for your Codable types. The property wrappers handle the decoding process for you.
+
+### 4. Simplify Optional Chaining
+
+You can avoid lengthy optional chaining in your code, thanks to the default values provided by the property wrappers.
+
+### 5. Direct JSON to Native Type Conversion
+
+Avoid manually converting JSON response types into native types every time you use them. The property wrappers handle this conversion for you.
+
+Example:
+```swift
+struct Item {
     @FullStringToUrl var pictureUrl: String
 }
-simple use it  as item.$pictureUrl '$' will give you URL?
+```
 
-Custom property wrappers. 
-you can create your own wrappers to use in Codable types. Just confirm your property wrapper with CodAbleInetilizer protocol and that it. 
-Lets assume you have to show a free shiping tag on the base of a Bool
+Usage:
+```swift
+let url = item.$pictureUrl
+```
 
-@propertyWrapper struct ShippingPrice: CodAbleInetilizer {
+### 6. Custom Property Wrappers
+
+You can create your own custom property wrappers for your specific use cases. To do this, confirm your property wrapper with the `CodAbleInitializer` protocol. As an example, you can create a `ShippingPrice` property wrapper for handling shipping-related information.
+
+```swift
+@propertyWrapper struct ShippingPrice: CodableInitializer {
     static var defaultValue: Bool = false
-    var wrappedValue : Bool
-    var projectedValue : String {
-        get{
-            return wrappedValue  ? "Free Shipping" : .emptyString
+    var wrappedValue: Bool
+    var projectedValue: String {
+        get {
+            return wrappedValue ? "Free Shipping" : ""
         }
     }
 }
-use it any where in your codables 
+```
 
+## Installation
 
+To use these property wrappers in your Swift project, simply add this Pod to your project using your preferred dependency manager.
 
+```swift
+pod 'Model'
+```
 
+## Contributions
+
+We encourage you to contribute to this repository by adding your reusable property wrappers and utilities. Your contributions are greatly appreciated!
+
+Thank you for using this Swift Pod. If you have any questions or need assistance, please don't hesitate to reach out. Happy codi
