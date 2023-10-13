@@ -1,5 +1,3 @@
-# Swift Pods Read Me
-
 ## Introduction
 
 This Swift Pod provides a set of powerful property wrappers and utilities to simplify working with Codable types and JSON responses. With these property wrappers, you can easily handle scenarios where JSON key types are uncertain, null, or non-existent, and you can also customize your own property wrappers. This README will guide you through the features and usage of this Pod.
@@ -78,6 +76,4 @@ pod 'Model'
 
 We encourage you to contribute to this repository by adding your reusable property wrappers and utilities. Your contributions are greatly appreciated!
 
-Thank you for using this Swift Pod. If you have any questions or need assistance, please don't hesitate to reach out. Happy coding!
-
-**Note:** Make sure to replace 'YourPodName' with the actual name of the Pod you are using.
+Thank you for using this Swift Pod. If you have any questions or need assistance, please don't hesitate to reach out. Happy codi
